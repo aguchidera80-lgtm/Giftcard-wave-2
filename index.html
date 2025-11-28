@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Giftcard & Crypto P2P - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+  <button class="menu-btn" id="menuBtn">☰</button>
+
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">G</div>
+        <div>
+          <div class="sidebar-title">Giftcard Wave</div>
+          <div class="sidebar-subtitle">Gift card and crypto P2P desk</div>
+        </div>
+      </div>
+
+      <div class="menu-group-label">Overview</div>
+      <ul class="menu">
+        <li>
+          <a class="menu-item active" href="index.html">
+            <span class="icon">🏠</span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="wallet.html">
+            <span class="icon">👛</span>
+            <span>Wallet</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="transactions.html">
+            <span class="icon">🧾</span>
+            <span>Transactions</span>
+          </a>
+        </li>
+      </ul>
+
+
+      <div class="menu-group-label">Trading tools</div>
+      <ul class="menu">
+        <li>
+          <a class="menu-item" href="giftcard-offers.html">
+            <span class="icon">🎁</span>
+            <span>Gift card offers</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="crypto-p2p.html">
+            <span class="icon">🪙</span>
+            <span>Crypto P2P</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="rate-calculator.html">
+            <span class="icon">🧮</span>
+            <span>Rate calculator</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="favorites.html">
+            <span class="icon">⭐</span>
+            <span>Favorites</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="rate-target.html">
+            <span class="icon">🎯</span>
+            <span>Rate target</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="show-love.html">
+            <span class="icon">❤️</span>
+            <span>Show love</span>
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <div class="page-header-title">Giftcard and Crypto marketplace</div>
+          <div class="page-header-sub">
+            Create offers, fund escrow, and trade safely in one place.
+          </div>
+        </div>
+        <div class="row">
+          <span class="chip">
+            <span class="chip-dot"></span>
+            Live demo account
+          </span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- Sidebar card: user and form -->
+        <aside class="card">
+          <div class="wallet-user">
+            <div class="row">
+              <div class="avatar">U</div>
+              <div>
+                <div class="muted">Current user</div>
+                <div class="small">
+                  <strong id="username">You</strong>
+                  <span class="muted">&nbsp;Real account</span>
+                </div>
+              </div>
+            </div>
+            <span class="chip">
+              <span class="chip-dot"></span>
+              Secure escrow
+            </span>
+          </div>
+
+          <hr />
+
+          <div>
+            <label class="muted">Balances</label>
+            <div class="balance-group">
+              <div class="balance-card">
+                <div class="balance-label">NGN</div>
+                <div class="balance-value">
+                  <strong id="balance-ng">0</strong>
+                </div>
+              </div>
+              <div class="balance-card">
+                <div class="balance-label">BTC</div>
+                <div class="balance-value">
+                  <strong id="balance-btc">0</strong>
+                </div>
+              </div>
+              <div class="balance-card">
+                <div class="balance-label">USDT</div>
+                <div class="balance-value">
+                  <strong id="balance-usdt">0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div>
+            <div class="card-header" style="margin-bottom: 10px">
+              <div>
+                <div class="card-title">Create listing</div>
+                <div class="card-subtitle">
+                  Publish a gift card or crypto offer to the marketplace.
+                </div>
+              </div>
+            </div>
+
+            <form id="createForm">
+              <div style="margin-bottom: 8px">
+                <label class="muted">Type</label>
+                <select id="listing-type">
+                  <option value="giftcard">Gift card</option>
+                  <option value="crypto">Crypto</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom: 8px">
+                <label class="muted">Asset</label>
+                <input id="listing-asset" placeholder="Example: Amazon 50 USD or BTC" required />
+              </div>
+
+              <div style="margin-bottom: 8px">
+                <label class="muted">Amount or quantity</label>
+                <input id="listing-qty" type="number" min="1" value="1" required />
+              </div>
+
+              <div style="margin-bottom: 8px">
+                <label class="muted">Price in NGN or price per unit</label>
+                <input id="listing-price" type="number" min="0" step="0.01" value="1000" required />
+              </div>
+
+              <div style="margin-bottom: 8px">
+                <label class="muted">Payment method</label>
+                <input id="listing-payment" placeholder="Bank transfer, wallet, etc" />
+              </div>
+
+              <div>
+                <label class="muted">Description</label>
+                <textarea id="listing-desc" rows="3" placeholder="Short description or terms"></textarea>
+              </div>
+
+              <!-- In Laravel this form would include @csrf and an action route if you submit to backend -->
+
+              <div style="margin-top: 10px; display: flex; gap: 8px">
+                <button type="submit" class="btn btn-primary btn-sm">
+                  Create offer
+                </button>
+                <button type="button" id="fund-btn" class="btn btn-outline btn-sm">
+                  Add demo funds
+                </button>
+              </div>
+            </form>
+          </div>
+        </aside>
+
+        <!-- Marketplace and escrows -->
+        <section style="display: flex; flex-direction: column; gap: 12px">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Active listings</div>
+                <div class="card-subtitle">
+                  Filter offers across gift cards and crypto.
+                </div>
+              </div>
+
+              <div class="market-filters">
+                <input id="search" placeholder="Search asset or payment method" />
+                <select id="filter-type">
+                  <option value="all">All</option>
+                  <option value="giftcard">Gift cards</option>
+                  <option value="crypto">Crypto</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="listings" class="listings"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Recent escrows</div>
+                <div class="card-subtitle">
+                  Track the status of ongoing and completed trades.
+                </div>
+              </div>
+            </div>
+            <div id="escrows" class="escrow-list muted small">
+              No escrows yet
+            </div>
+          </div>
+
+          
+        </section>
+        
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    Giftcard and crypto P2P marketplace - environment - © 2025
+  </footer>
+
+  <!-- Modal: Buy / Escrow -->
+  <div id="modal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Place order</h3>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+      <div class="modal-actions">
+        <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+        <button id="modal-confirm" class="btn btn-primary btn-sm">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Transactions</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/transactions.js" defer></script> <!-- Add transactions page JS -->
+</head>
+
+<body>
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">G</div>
+                <div>
+                    <div class="sidebar-title">Giftcard Wave</div>
+                    <div class="sidebar-subtitle">Gift card and crypto P2P desk</div>
+                </div>
+            </div>
+
+            <div class="menu-group-label">Overview</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="index.html">
+                        <span class="icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="wallet.html">
+                        <span class="icon">👛</span>
+                        <span>Wallet</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item active" href="transactions.html">
+                        <span class="icon">🧾</span>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="menu-group-label">Trading tools</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="giftcard-offers.html">
+                        <span class="icon">🎁</span>
+                        <span>Gift card offers</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="crypto-p2p.html">
+                        <span class="icon">🪙</span>
+                        <span>Crypto P2P</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-calculator.html">
+                        <span class="icon">🧮</span>
+                        <span>Rate calculator</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="favorites.html">
+                        <span class="icon">⭐</span>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-target.html">
+                        <span class="icon">🎯</span>
+                        <span>Rate target</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="show-love.html">
+                        <span class="icon">❤️</span>
+                        <span>Show love</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+            <header class="page-header">
+                <div>
+                    <div class="page-header-title">Transaction History</div>
+                    <div class="page-header-sub">
+                        View all your transactions: deposits, withdrawals, trades, and more.
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="chip">
+                        <span class="chip-dot"></span>
+                        Demo data (local only)
+                    </span>
+                </div>
+            </header>
+
+            <!-- Transaction filter section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Filters</div>
+                        <div class="card-subtitle">
+                            Filter by transaction type or status.
+                        </div>
+                    </div>
+                </div>
+                <div class="transaction-filters">
+                    <select id="filter-type">
+                        <option value="all">All transactions</option>
+                        <option value="deposit">Deposits</option>
+                        <option value="withdrawal">Withdrawals</option>
+                        <option value="transfer">Transfers</option>
+                        <option value="escrow">Escrows</option>
+                    </select>
+                    <select id="filter-status">
+                        <option value="all">All statuses</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Transaction Table -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Transactions</div>
+                        <div class="card-subtitle">
+                            View your recent transactions below.
+                        </div>
+                    </div>
+                </div>
+
+                <table class="tx-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-body">
+                        <!-- Populated via JS -->
+                    </tbody>
+                </table>
+
+                <div id="transaction-empty" class="muted small">
+                    No transactions yet. Complete a trade or action.
+                </div>
+            </section>
+
+            <!-- Transaction details (optional modal) -->
+            <div id="transaction-details-modal" class="modal-backdrop">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3>Transaction Details</h3>
+                    </div>
+                    <div id="transaction-details-body" class="modal-body">
+                        <!-- Populated via JS -->
+                    </div>
+                    <div class="modal-actions">
+                        <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        Giftcard and crypto P2P marketplace - Demo environment - © 2025
+    </footer>
+</body>
+
+</html>
